@@ -1,16 +1,9 @@
-# covid_webview
+# COVID-19 Tracker
 
-A new Flutter project.
+This is a simple WebView app created in Flutter for the purpose of easily displaying
+up-to-date data from Johns Hopkins University on the ongoing Coronavirus Pandemic.
 
-## Getting Started
+It is a one-page application with one 'home button' for navigating back to the initial
+URL if the user clicks links and wants to return to the main website.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Example Screenshot](https://github.com/thatzenbuhler/COVID-19-Tracker/example.png "Example Screenshot")
