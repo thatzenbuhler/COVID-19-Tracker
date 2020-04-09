@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'COVID-19 Status Map'),
+      home: MyHomePage(title: 'COVID-19 Tracker'),
     );
   }
 }
@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final String pagelink =
+  static const String pagelink =
       "https://www.arcgis.com/apps/opsdashboard/index.html#/85320e2ea5424dfaaa75ae62e5c06e61";
 
   Completer<WebViewController> _controller = Completer<WebViewController>();
@@ -43,6 +43,13 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
           backgroundColor: Colors.blueGrey[900],
           actions: <Widget>[
+            IconButton(icon: Icon(Icons.refresh), onPressed: () {
+              if (_controller.isCompleted) {
+                _controller.future.then((result) {
+                  result.reload();
+                });
+              }
+            }),
             IconButton(icon: Icon(Icons.home), onPressed: () {
               if (_controller.isCompleted) {
                 _controller.future.then((result) {
